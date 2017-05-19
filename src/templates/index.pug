@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  title PDFfiller
+  
+  link(rel="stylesheet", href="css/style.css")
+body
+
+  //-  POPUP
+  .popup 
+    
+    //- POPUP TITLE
+    .popup__def
+      
+      img(src="./assets/img/gallery-signature.svg", alt="Signature manager").def__tag
+      .def Create Your Signature 
+        span.def__extender / Initials
+      
+      .popup__dismiss
+    
+    //- POPUP CONTENT
+    .popup__content
+
+      .component.component__signup
+        
+        .signup__tag
+          img(src="/assets/img/type.svg", alt="").component__tag
+          .signup__title Type
+          
+        .component__def 
+          .component__text Easy way to create your signature or initials type your name or select an option from the bottom to create your signature or initials.
+          form
+            input(type="text" value="John Smith").fill
+            button.btn.btn--rc.btn--submit Sign
+          
+        .component.component__result John Smith
+
+      .component
+        img(src="/assets/img/draw.svg", alt="").component__tag
+        .component__def
+          .component__title Draw
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      
+      .component.component--hide
+        img(src="/assets/img/type.svg", alt="").component__tag
+        .component__def
+          .component__title Type
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      .component
+        img(src="/assets/img/upload.svg", alt="").component__tag
+        .component__def 
+          .component__title Upload
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      .component
+        img(src="/assets/img/camera.svg", alt="").component__tag
+        .component__def 
+          .component__title Use camera
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      .component
+        img(src="/assets/img/qr-mobile.svg", alt="").component__tag
+        .component__def 
+          .component__title Via QR code
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    
+
+      .component
+        img(src="/assets/img/sms-mobile.svg", alt="").component__tag
+        .component__def 
+          .component__title Use mobile via SMS
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    
+  
+      .component
+        img(src="/assets/img/email-mobile.svg", alt="").component__tag
+        .component__def 
+          .component__title USE mobile via email
+          .component__text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  

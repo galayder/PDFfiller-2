@@ -1,0 +1,54 @@
+.popup
+  margin: 0 auto
+  margin-top: 44px
+  max-width: 750px
+  min-height: 580px
+  border-radius: 3px
+  background-color: $box-bg
+  overflow: hidden
+  @include drop-shadow
+
+.popup__def
+  display: flex
+  align-items: center
+  height: 60px
+  background-color: $box__desc-bg
+  border-bottom: 1px solid $border-bot
+
+.def__tag
+  margin-left: 20px
+
+.def
+  padding-left: 12px
+  font-size: 20px
+  color: $title
+
+.def--iconic::before
+  content: ''
+  display: inline-block
+  width: 32px
+  height: 32px
+  background-image: url(/)
+  background-size: cover
+
+.popup__content
+  display: flex
+  flex-wrap: wrap
+  margin: 20px 20px
+
+.popup__dismiss
+  margin-left: auto
+  margin-right: 20px
+  width: 16px
+  height: 2px
+  transform-origin: 50%
+  transform: rotate(45deg)
+  background-color: $text
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    width: 16px
+    height: 2px
+    background-color: $text
+    transform: rotate(90deg)

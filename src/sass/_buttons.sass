@@ -1,0 +1,26 @@
+// BUTTONS
+
+.btn
+  cursor: pointer
+  width: auto
+  height: 32px
+  padding: 0 34px
+  text-decoration: none
+  border: 1px solid
+
+.btn--rc
+  border-radius: 3px
+
+.btn--submit
+  font-weight: bold
+  color: $white
+  font-size: 12px
+  text-transform: uppercase
+  border-color: $tangerine-dark
+  background: $tangerine
+  @include orange-gradient
+  &:hover
+    background: $tangerine
+  &:active
+    background: $tangerine-dark
+  transition: all 0.15s ease-in-out
