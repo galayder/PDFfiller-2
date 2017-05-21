@@ -81,7 +81,7 @@ gulp.task('browserSync', function() {
 
 // Minify css for build
 gulp.task('css-libs', ['sass'], function() {
-    return gulp.src('src/css/*/**') // Choose style to minify
+    return gulp.src('src/css/style.css') // Choose style to minify
         .pipe(cssnano()) // Minifying
         .pipe(rename({suffix: '.min'})) // Adding suffix .min
         .pipe(gulp.dest('public/css')); // Load to destination
@@ -117,11 +117,11 @@ gulp.task('img', function() {
         .pipe(gulp.dest('public/assets/img')); // Выгружаем на продакшен
 });
 
-// Build to dist
+// Build to public
 gulp.task('build', ['img', 'sass', 'gcmq'], function() {
 
     var buildCss = gulp.src([ // Put css to production
-        'src/css/libs.min.css'
+        'src/css/**/*.css'
         ])
     .pipe(gulp.dest('public/css'))
 
