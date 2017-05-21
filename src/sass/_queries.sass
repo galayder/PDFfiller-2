@@ -10,6 +10,7 @@ $small: 767px
     background-color: $white
     border-radius: 0
     margin-top: 0
+    max-width: 500px
 
   .popup__content
     margin: 0
@@ -20,18 +21,35 @@ $small: 767px
 
   .def
     font-size: 18px
+    margin: auto
 
 
-  .dismiss
+  .popup__dismiss
     position: absolute
+    width: 14px
+    height: 14px
     right: 0
-    margin-right: 15px
-    width: 20px
-    background-color: $dismiss
-    opacity: 0.54
+    margin-left: auto
+    margin-right: 20px
+    overflow: hidden
+    cursor: pointer
+    &:hover
+      &::before, &::after 
+        background: $border
+
+    &::before, &::after
+      content: ''
+      position: absolute
+      height: 2px
+      width: 100%
+      top: 50%
+      left: 0
+      margin-top: -1px
+      background: $text
+    &::before
+      transform: rotate(45deg)
     &::after
-      width: 20px
-      background-color: $dismiss
+      transform: rotate(-45deg)
 
   .component
     flex: 1 1 100%
