@@ -8,28 +8,20 @@
   overflow: hidden
   @include drop-shadow
 
-.popup__def
+.popup__header
   display: flex
   align-items: center
   height: 60px
   background-color: $box__desc-bg
   border-bottom: 1px solid $border-bot
 
-.def__tag
+.popup__tag
   margin-left: 20px
 
-.def
+.popup__title
   padding-left: 12px
   font-size: 20px
   color: $title
-
-.def--iconic::before
-  content: ''
-  display: inline-block
-  width: 32px
-  height: 32px
-  background-image: url(/)
-  background-size: cover
 
 .popup__content
   display: flex
@@ -45,7 +37,7 @@
   overflow: hidden
   cursor: pointer
   &:hover
-    &::before, &::after 
+    &::before, &::after
       background: $border
 
   &::before, &::after
