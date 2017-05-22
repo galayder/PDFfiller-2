@@ -11,8 +11,7 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
-    pug          = require('gulp-pug'),
-    gcmq         = require ('gulp-group-css-media-queries');
+    pug          = require('gulp-pug');
 
 
 gulp.task('sass', function(){
@@ -20,7 +19,7 @@ gulp.task('sass', function(){
         .pipe(sourcemaps.init())
         .pipe(sass({}
         ))
-        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(postcss([ autoprefixer({ browsers: ['last 3 versions'] }) ]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({
@@ -28,11 +27,7 @@ gulp.task('sass', function(){
     }))
 });
 
-gulp.task('gcmq', function () {
-    gulp.src('src/css/style.css')
-        .pipe(gcmq())
-        .pipe(gulp.dest('public/css'));
-});
+
 
 // Compile pug to html
 gulp.task('pug', function() {
@@ -42,6 +37,7 @@ gulp.task('pug', function() {
         }))
         .pipe(gulp.dest('src'));
 });
+
 
 // Build icon font
 gulp.task("build:icons", function() {
@@ -66,6 +62,7 @@ gulp.task("build:icons", function() {
      .pipe(gulp.dest("src/assets/fonts/"));//icon font destination
 });
 
+
 // Start browserSync
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -77,7 +74,8 @@ gulp.task('browserSync', function() {
         notify: true,
         browser: "chrome.exe"
     })
-})
+});
+
 
 // Minify css for build
 gulp.task('css-libs', ['sass'], function() {
@@ -87,23 +85,27 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('public/css')); // Load to destination
 });
 
+
 // Watching changes
 gulp.task('default', ['watch']);
 gulp.task('watch', ['browserSync', 'sass', 'pug'], function(){
     gulp.watch('src/templates/**/*.pug', ['pug']);
     gulp.watch('src/sass/**/*.sass', ['sass']);
     gulp.watch('src/**/*.html').on('change', browserSync.reload);
-})
+});
+
 
 // Clear Gulp cache
 gulp.task('clear', function () {
     return cache.clearAll();
-})
+});
+
 
 // Clear dist before build
 gulp.task('clean', function() {
     return del.sync('public/');
 });
+
 
 // Optimize images
 gulp.task('img', function() {
@@ -117,8 +119,9 @@ gulp.task('img', function() {
         .pipe(gulp.dest('public/assets/img')); // Выгружаем на продакшен
 });
 
+
 // Build to public
-gulp.task('build', ['img', 'sass', 'gcmq'], function() {
+gulp.task('build', ['img', 'sass'], function() {
 
     var buildCss = gulp.src([ // Put css to production
         'src/css/**/*.css'
