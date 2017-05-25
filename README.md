@@ -1,5 +1,4 @@
-# PDFfiller-2
-# Test task
+# Static popup
 
 19-05-17
 First public commit:
