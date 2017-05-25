@@ -10,6 +10,7 @@ Fixes:
 - IE 10+ optimized!
 - Popup dismiss button re-written
 - some code refactoring and pixel-perfect enhancements
+
 Further improvements:
 - next version will include svg-sprite
 
